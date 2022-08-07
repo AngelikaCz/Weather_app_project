@@ -1,9 +1,3 @@
-cityName = "Alaska";
-apiKey = "dee9a420d2a7b5a314d3260f8ca83eea";
-apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayWeather);
-
 function displayWeather(data) {
   let displayedTemperature = document.querySelector("#temperature");
   displayedTemperature.innerHTML = Math.round(data.data.main.temp);
@@ -41,4 +35,21 @@ function getDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
+}
+
+function lookForCity(city) {
+  apiKey = "dee9a420d2a7b5a314d3260f8ca83eea";
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+let clickedButton = document.querySelector("#search_button");
+clickedButton.addEventListener("click", searchCity);
+
+function searchCity(event) {
+  event.preventDefault();
+  let insertedCity = document.querySelector("#city-name");
+  lookForCity(insertedCity.value);
+  let displayedCity = document.querySelector("#city");
+  displayedCity.innerHTML = insertedCity.value;
 }
