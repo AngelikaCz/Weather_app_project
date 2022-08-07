@@ -1,4 +1,4 @@
-cityName = "Paris";
+cityName = "Alaska";
 apiKey = "dee9a420d2a7b5a314d3260f8ca83eea";
 apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
@@ -15,6 +15,15 @@ function displayWeather(data) {
   displayedDescription.innerHTML = data.data.weather[0].description;
   let displayedDate = document.querySelector("#date");
   displayedDate.innerHTML = getDate(data.data.dt * 1000);
+  let displayedIcon = document.querySelector("#icon");
+  displayedIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${data.data.weather[0].icon}@2x.png`
+  );
+  displayedIcon.setAttribute(
+    "alt",
+    `http://openweathermap.org/img/wn/${data.data.weather[0].description}@2x.png`
+  );
 }
 
 function getDate(timestamp) {
