@@ -1,7 +1,6 @@
 body {
   background-image: url(clouds_weather_app.jpg);
   background-size: 100%;
-  background-repeat: no-repeat;
 }
 
 footer {
@@ -10,6 +9,7 @@ footer {
   margin-top: 10px;
   font-size: small;
   font-weight: bolder;
+  text-align: center;
 }
 
 form {
