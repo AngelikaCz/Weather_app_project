@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <header class="main">
+        <form>
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="text"
+                class="form-control form"
+                placeholder="Type your city here"
+              />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="btn btn-dark" />
+            </div>
+          </div>
+        </form>
+        <div class="city">Paris, Sunday 14:00</div>
+        <div>Cloudy</div>
+        <div class="temperature">
+          ☀ 19° <span class="units"><a href="#">C</a>|<a href="#">F</a></span>
+        </div>
+        <div>Humidity x% Wind x%</div>
+      </header>
+      <footer>
+        This project was coded by Angelika Czerwińska and is open-sourced on
+        GitHub and hosted on Netlify
+      </footer>
+    </div>
+  </body>
+</html>

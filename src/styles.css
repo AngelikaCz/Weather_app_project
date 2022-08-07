@@ -1,0 +1,47 @@
+body {
+  background-image: url(clouds_weather_app.jpg);
+  background-size: 100%;
+}
+
+footer {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: small;
+  font-weight: bolder;
+}
+
+form {
+  padding: 10px;
+  text-align: center;
+}
+
+.form {
+  position: relative;
+  left: 10px;
+}
+
+.city {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.main {
+  max-width: 500px;
+  margin: 10px auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+}
+
+.temperature {
+  font-size: 30px;
+}
+
+.units {
+  font-size: 13px;
+  position: relative;
+  bottom: 12px;
+}
