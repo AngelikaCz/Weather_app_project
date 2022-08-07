@@ -1,6 +1,7 @@
 body {
   background-image: url(clouds_weather_app.jpg);
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 footer {
@@ -34,6 +35,7 @@ form {
   text-align: center;
   font-family: "Karla", sans-serif;
   font-weight: bold;
+  color: white;
 }
 
 .temperature {
@@ -49,12 +51,17 @@ form {
   color: black;
   text-decoration: underline;
 }
+
+.last_section {
+  padding-bottom: 10px;
+}
+
 .notactive {
-  color: black;
+  color: white;
   cursor: auto;
 }
 .notactive:hover {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
