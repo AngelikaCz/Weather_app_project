@@ -1,6 +1,7 @@
 function displayWeather(data) {
   let displayedTemperature = document.querySelector("#temperature");
-  displayedTemperature.innerHTML = Math.round(data.data.main.temp);
+  celsiusTemp = data.data.main.temp;
+  displayedTemperature.innerHTML = Math.round(celsiusTemp);
   let displayedHumidity = document.querySelector("#humidity");
   displayedHumidity.innerHTML = data.data.main.humidity;
   let displayedWind = document.querySelector("#wind");
@@ -53,3 +54,30 @@ function searchCity(event) {
   let displayedCity = document.querySelector("#city");
   displayedCity.innerHTML = insertedCity.value;
 }
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = document.querySelector("#temperature");
+  let fahrenheitCalculation = celsiusTemp * 1.8 + 32;
+  fahrenheitTemp.innerHTML = Math.round(fahrenheitCalculation);
+  toCelsius.classList.remove("notactive");
+  toFahrenheit.classList.add("notactive");
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let celsiusTemperature = document.querySelector("#temperature");
+  celsiusTemperature.innerHTML = Math.round(celsiusTemp);
+  toCelsius.classList.add("notactive");
+  toFahrenheit.classList.remove("notactive");
+}
+
+let celsiusTemp = null;
+
+let toFahrenheit = document.querySelector("#fahrenheit");
+toFahrenheit.addEventListener("click", showFahrenheit);
+
+let toCelsius = document.querySelector("#celsius");
+toCelsius.addEventListener("click", showCelsius);
+
+lookForCity("Warsaw");

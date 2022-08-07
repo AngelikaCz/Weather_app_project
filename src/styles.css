@@ -45,6 +45,19 @@ form {
   position: relative;
   bottom: 12px;
 }
+.link {
+  color: black;
+  text-decoration: underline;
+}
+.notactive {
+  color: black;
+  cursor: auto;
+}
+.notactive:hover {
+  color: black;
+  text-decoration: none;
+}
+
 #description:first-letter {
   text-transform: capitalize;
 }
