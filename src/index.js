@@ -15,13 +15,10 @@ function displayWeather(data) {
     "src",
     `http://openweathermap.org/img/wn/${data.data.weather[0].icon}@2x.png`
   );
-  displayedIcon.setAttribute(
-    "alt",
-    `http://openweathermap.org/img/wn/${data.data.weather[0].description}@2x.png`
-  );
+  displayedIcon.setAttribute("alt", data.data.weather[0].description);
 }
 
-function getDate(timestamp) {
+https: function getDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
