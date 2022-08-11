@@ -76,6 +76,33 @@ function showCelsius(event) {
   toFahrenheit.classList.remove("notactive");
 }
 
+function displayForecast() {
+  let forecastShown = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <span>${day}</span>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="clouds"
+                width="50px;"
+              />
+              <div class="forecast-temp">
+                26° <span class="min-forecast"> 17°</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastShown.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 let celsiusTemp = null;
 
 let toFahrenheit = document.querySelector("#fahrenheit");

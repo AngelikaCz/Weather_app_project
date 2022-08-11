@@ -58,6 +58,7 @@ form {
 
 .forecast {
   text-align: center;
+  padding: 10px;
 }
 
 .forecast-temp {
