@@ -56,6 +56,18 @@ form {
   padding-bottom: 10px;
 }
 
+.forecast {
+  text-align: center;
+}
+
+.forecast-temp {
+  font-size: 13px;
+}
+
+.min-forecast {
+  opacity: 0.5;
+}
+
 .notactive {
   color: white;
   cursor: auto;
