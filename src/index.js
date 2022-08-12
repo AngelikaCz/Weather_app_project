@@ -1,3 +1,10 @@
+function getForecast(coords) {
+  let apiKey = "dee9a420d2a7b5a314d3260f8ca83eea";
+  let apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric&cnt=5`;
+
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayWeather(data) {
   let displayedTemperature = document.querySelector("#temperature");
   celsiusTemp = data.data.main.temp;
@@ -16,6 +23,8 @@ function displayWeather(data) {
     `http://openweathermap.org/img/wn/${data.data.weather[0].icon}@2x.png`
   );
   displayedIcon.setAttribute("alt", data.data.weather[0].description);
+
+  getForecast(data.data.coord);
 }
 
 https: function getDate(timestamp) {
@@ -76,7 +85,8 @@ function showCelsius(event) {
   toFahrenheit.classList.remove("notactive");
 }
 
-function displayForecast() {
+function displayForecast(reply) {
+  console.log(reply.data.list);
   let forecastShown = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -87,7 +97,7 @@ function displayForecast() {
       `<div class="col-2">
               <span>${day}</span>
               <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="https://openweathermap.org/img/wn/10d@2x.png"
                 alt="clouds"
                 width="50px;"
               />
@@ -100,8 +110,6 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastShown.innerHTML = forecastHTML;
 }
-
-displayForecast();
 
 let celsiusTemp = null;
 
